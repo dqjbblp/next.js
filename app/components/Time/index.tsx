@@ -1,37 +1,21 @@
-"use client"
+// "use client"
+//有它才能用hook
+// export const dynamic = "force-dynamic";
+//这个能让我们当前的组件是动态的，会让js的缓存刷新
+const Time = async () => {
 
-import { useEffect, useState } from "react";
-
-const Time = () => {
-  const [time,setTime] = useState('')
-
-  const getCurrentTime = () => {
-    const date = new Date();
-    const hours = addLeadingZero(date.getHours());
-    const minutes = addLeadingZero(date.getMinutes());
-    const seconds = addLeadingZero(date.getSeconds());
-    return `${hours}:${minutes}:${seconds}`;
-  }
-  
-  const addLeadingZero = (number:number) => {
-    return number < 10 ? `0${number}` : number;
-  }
-
-  useEffect(()=>{
-  
-  const timer = setInterval(() => {
-    const currentTime = getCurrentTime();
-    setTime(currentTime)
-  }, 1000);
-  
-  return () => {
-    clearInterval(timer)
-  }
-  },[time])
+  const fetch1 = await (
+    await fetch("http://api.open-notify.org/iss-now.json",{
+      // next:{revalidate:5}
+      //这段配置代表几秒重新重置缓存
+      cache:'no-cache'
+      //这段配置cache是对缓存的配置,代表不用缓存用缓存等...
+    })
+  ).json()
 
   return (
     <>
-      {time}
+      {new Date().toLocaleString()}
     </>
   )
 }

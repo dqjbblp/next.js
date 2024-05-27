@@ -1,6 +1,11 @@
+import { ArticleApi } from "../api/article-api"
+import LastNews from "../components/LastNews"
+
 const Home = () => {
   return (
-    <div className={'text-text3 text-s1'}>hi</div>
+    <div>
+      <LastNews />
+    </div>
   )
 }
 

@@ -1,3 +1,4 @@
+import { ArticleApi } from "@/app/api/article-api";
 import { IMG_ITEM } from "@/app/components/Nav/constant";
 import Image from "next/image";
 
@@ -6,6 +7,10 @@ const CategoryDetail = (props: {
   // searchParams: { date: string }   // 查询参数
 }) => {
   const item = IMG_ITEM[props.params.id]
+  ArticleApi.fetchToday().then(res=>{
+    console.log(res);
+    
+  })
 
   return (
     <div className={'flex items-center space-x-4'}>

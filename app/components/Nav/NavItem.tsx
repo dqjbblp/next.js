@@ -1,10 +1,11 @@
 "use client"
+import { CategoryType } from "@/app/types/article-type";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const NavItem = (props: {
-  path: string;
+  path: CategoryType;
   alt: string;
   src: StaticImageData;
 }) => {

@@ -1,4 +1,5 @@
 import business from "@/public/business.png"
+import crime from "@/public/crime.png"
 import entertainment from "@/public/entertainment.png"
 import environment from "@/public/environment.png"
 import health from "@/public/health.png"
@@ -10,6 +11,7 @@ import world from "@/public/world.png"
 
 export const IMG_ITEM = {
   business:{src:business,alt:'business logo',category:'business'},
+	crime:{src:crime,alt:'crime logo',category:'crime'},
 	entertainment:{src:entertainment,alt:'entertainment logo',category:'entertainment'},
 	environment:{src:environment,alt:'environment logo',category:'environment'},
 	health:{src:health,alt:'health logo',category:'health'},
